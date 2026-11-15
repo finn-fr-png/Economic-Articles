@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is the Dollar Holding Back the Developing World? — Finnigan French</title>
+<style>
+  :root {
+    --forest: #0d2b24;
+    --forest-2: #14423a;
+    --gold: #d9a93b;
+    --paper: #fbfaf6;
+    --ink: #16231f;
+    --muted: #5d6b66;
+    --line: #d9ded8;
+    --green: #1d7a5f;
+    --slate: #7a8b95;
+    --mist: #c6d0cb;
+    --coral: #c8553d;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 18px; line-height: 1.7;
+  }
+
+  /* ---------- hero ---------- */
+  .hero { background: var(--forest); color: #fff; }
+  .hero-inner { max-width: 980px; margin: 0 auto; padding: 56px 24px 40px; }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin: 0 0 18px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 700; font-size: 54px; line-height: 1.08;
+    margin: 0 0 22px; letter-spacing: -0.015em; max-width: 780px;
+  }
+  .dek { font-size: 22px; line-height: 1.5; color: #cfe0d8; max-width: 740px; margin: 0 0 26px; }
+  .byline { font-size: 14px; color: #a9c2b8; letter-spacing: 0.04em; }
+  .byline strong { color: #fff; font-weight: 600; }
+  .hero-img-wrap { background: var(--forest-2); }
+  .hero-img { display: block; width: 100%; max-width: 980px; height: 380px; object-fit: cover; margin: 0 auto; color: #a9c2b8; font-size: 14px; }
+  .hero-cap { max-width: 980px; margin: 0 auto; padding: 10px 24px 14px; font-size: 13px; color: #a9c2b8; }
+
+  /* ---------- article ---------- */
+  .article { max-width: 700px; margin: 0 auto; padding: 52px 24px 40px; }
+  p { margin: 0 0 22px; }
+  .lede { font-size: 21px; line-height: 1.65; }
+  sup a { color: var(--green); text-decoration: none; font-weight: 700; font-size: 12px; padding: 0 1px; }
+  sup a:hover { text-decoration: underline; }
+
+  .sec-head { margin: 60px 0 18px; }
+  .sec-num { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 14px; color: var(--gold); font-weight: 700; letter-spacing: 0.1em; }
+  h2 {
+    font-family: var(--serif); font-size: 32px; line-height: 1.2; font-weight: 700;
+    margin: 4px 0 0; padding-bottom: 12px; border-bottom: 2px solid var(--forest);
+  }
+
+  /* ---------- figures ---------- */
+  figure { margin: 34px 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 22px 22px 16px; }
+  .fig-title { font-weight: 700; font-size: 17px; margin: 0 0 4px; }
+  .fig-sub { font-size: 14px; color: var(--muted); margin: 0 0 14px; line-height: 1.45; }
+  figure svg { width: 100%; height: auto; display: block; }
+  figcaption { font-size: 13px; line-height: 1.5; color: var(--muted); margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
+
+  /* ---------- stat band ---------- */
+  .stats { display: flex; gap: 12px; margin: 34px 0; flex-wrap: wrap; }
+  .stat { flex: 1 1 180px; background: var(--forest); color: #fff; border-radius: 10px; padding: 20px 18px 16px; }
+  .stat .n { font-family: var(--serif); font-size: 38px; font-weight: 700; line-height: 1.05; color: var(--gold); }
+  .stat .l { font-size: 14px; line-height: 1.45; color: #cfe0d8; margin-top: 8px; }
+  .stat .l sup a { color: var(--gold); }
+
+  /* ---------- two-worlds diagram ---------- */
+  .world { margin: 6px 0 14px; }
+  .world-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; margin: 14px 0 8px; }
+  .world-label.a { color: var(--green); }
+  .world-label.b { color: var(--coral); }
+  .flow { display: flex; align-items: stretch; gap: 6px; }
+  .step { flex: 1 1 0; padding: 12px 12px; border-radius: 8px; font-size: 15px; line-height: 1.4; text-align: center; display: flex; align-items: center; justify-content: center; }
+  .a .step, .flow.a .step { background: #e5f1ec; border: 1px solid #b9d8cc; }
+  .flow.b .step { background: #f8e8e3; border: 1px solid #ecc3b8; }
+  .arrow { align-self: center; color: var(--muted); font-size: 18px; flex: 0 0 auto; }
+  @media (max-width: 640px) {
+    h1 { font-size: 36px; } .dek { font-size: 19px; } body { font-size: 17px; }
+    .hero-img { height: 240px; }
+    .flow { flex-direction: column; } .arrow { transform: rotate(90deg); }
+    h2 { font-size: 27px; }
+  }
+
+  /* ---------- closing + sources ---------- */
+  .closing { background: #eef3ef; border-left: 4px solid var(--gold); padding: 22px 24px; margin: 40px 0 10px; border-radius: 0 10px 10px 0; font-size: 19px; }
+  .closing p:last-child { margin-bottom: 0; }
+  .sources { max-width: 700px; margin: 0 auto; padding: 8px 24px 90px; }
+  .sources h2 { font-size: 24px; }
+  .sources ol { font-size: 13.5px; line-height: 1.55; color: var(--muted); padding-left: 22px; margin-top: 16px; }
+  .sources li { margin-bottom: 9px; }
+  .sources a { color: var(--green); word-break: break-all; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 22px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Economics newsletter</p>
+    <h1>Is the Dollar Holding Back the Developing World?</h1>
+    <p class="dek">It prices much of the world's oil, turns up in almost every currency trade and fills central banks' vaults. For poorer countries, it is both a safe harbour and a straitjacket.</p>
+    <div class="byline">By <strong>Finnigan French</strong></div>
+  </div>
+  <div class="hero-img-wrap">
+    <img class="hero-img" src="united-states-federal-reserve-building--washington-dc--usa-699686820-4fe8a5acea0b451b8998d683dfcd87db.webp" alt="The United States Federal Reserve building in Washington, DC">
+    <!-- Add the photo credit here if the image licence requires one -->
+    <div class="hero-cap">The United States Federal Reserve building in Washington, DC.</div>
+  </div>
+</header>
+
+<main class="article">
+
+  <p class="lede">In 2018, the Argentine peso lost more than half its value against the US dollar.<sup><a href="#n1">1</a></sup> That would hurt any country. For Argentina it was worse, because much of its borrowing was in dollars, so every peso lost made the debt heavier in local terms.<sup><a href="#n1">1</a></sup> By the autumn the government was leaning on an IMF programme that had grown to $57.1 billion, the largest stand-by arrangement in the Fund's history.<sup><a href="#n2">2</a></sup></p>
+
+  <p>Argentina is an extreme case, but not an isolated one. It points to a question economists have argued over for decades: when almost the whole world prices, borrows and saves in one country's money, who carries the risk? This article argues that the dollar's dominance does act as a brake on growth in developing economies, through trade and through debt, but that the alternatives are not yet ready to take its place.</p>
+
+  <!-- ===== 01 ===== -->
+  <div class="sec-head"><span class="sec-num">01</span><h2>The currency of everything</h2></div>
+
+  <p>The dollar's rise began at Bretton Woods in 1944, when other currencies were pegged to the dollar and the dollar was tied to gold. The gold link was cut in the early 1970s, but the dollar's status survived. It had acquired something stickier than a legal guarantee: habit.</p>
+
+  <p>The numbers are striking. In April 2025 the dollar was on one side of 89% of all foreign-exchange trades,<sup><a href="#n3">3</a></sup> a share that has barely moved in about 25 years even as the market has grown enormously.<sup><a href="#n4">4</a></sup></p>
+
+  <figure>
+    <p class="fig-title">Almost every currency trade has a dollar on one side</p>
+    <p class="fig-sub">Share of all foreign-exchange trades in which each currency took part, April 2025 (%)</p>
+    <svg viewBox="0 0 640 262" role="img" aria-label="Horizontal bar chart: US dollar 89 percent, euro 28.9, yen 16.8, sterling 10.2, renminbi 8.5 of foreign-exchange trades">
+      <g font-family="system-ui,-apple-system,'Segoe UI',Arial,sans-serif" font-size="14">
+        <text x="0" y="40" fill="#16231f">US dollar</text>
+        <rect x="130" y="20" width="418" height="30" rx="3" fill="#1d7a5f"/>
+        <text x="556" y="41" font-weight="700" fill="#16231f">89%</text>
+
+        <text x="0" y="90" fill="#16231f">Euro</text>
+        <rect x="130" y="70" width="136" height="30" rx="3" fill="#7a8b95"/>
+        <text x="274" y="91" font-weight="700" fill="#16231f">28.9%</text>
+
+        <text x="0" y="140" fill="#16231f">Japanese yen</text>
+        <rect x="130" y="120" width="79" height="30" rx="3" fill="#7a8b95"/>
+        <text x="217" y="141" font-weight="700" fill="#16231f">16.8%</text>
+
+        <text x="0" y="190" fill="#16231f">Pound sterling</text>
+        <rect x="130" y="170" width="48" height="30" rx="3" fill="#7a8b95"/>
+        <text x="186" y="191" font-weight="700" fill="#16231f">10.2%</text>
+
+        <text x="0" y="240" fill="#16231f">Chinese renminbi</text>
+        <rect x="130" y="220" width="40" height="30" rx="3" fill="#d9a93b"/>
+        <text x="178" y="241" font-weight="700" fill="#16231f">8.5%</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 1.</b> Every trade has two sides, so the shares add up to 200%.<sup><a href="#n4">4</a></sup> Sources: BIS Triennial Survey 2025 for the dollar, euro and yen;<sup><a href="#n3">3</a></sup> sterling;<sup><a href="#n5">5</a></sup> renminbi.<sup><a href="#n6">6</a></sup></figcaption>
+  </figure>
+
+  <p>Central banks tell the same story. According to the IMF's latest figures, 56.7% of the world's foreign-exchange reserves are held in dollars and 20.6% in euros. Yen, sterling, renminbi and everything else share the remaining 22.7%.<sup><a href="#n7">7</a></sup></p>
+
+  <figure>
+    <p class="fig-title">Where central banks keep their foreign-currency reserves</p>
+    <p class="fig-sub">Share of global official foreign-exchange reserves by currency, second quarter of 2026 (%)</p>
+    <svg viewBox="0 0 640 130" role="img" aria-label="Stacked bar: US dollar 56.7 percent, euro 20.6, all other currencies 22.7 of global reserves">
+      <g font-family="system-ui,-apple-system,'Segoe UI',Arial,sans-serif">
+        <rect x="20" y="20" width="340.2" height="62" fill="#1d7a5f"/>
+        <rect x="360.2" y="20" width="123.6" height="62" fill="#d9a93b"/>
+        <rect x="483.8" y="20" width="136.2" height="62" fill="#c6d0cb"/>
+        <text x="36" y="46" font-size="13" fill="#fff">US dollar</text>
+        <text x="36" y="68" font-size="20" font-weight="700" fill="#fff">56.7%</text>
+        <text x="372" y="46" font-size="13" fill="#16231f">Euro</text>
+        <text x="372" y="68" font-size="20" font-weight="700" fill="#16231f">20.6%</text>
+        <text x="496" y="46" font-size="13" fill="#16231f">All other</text>
+        <text x="496" y="68" font-size="20" font-weight="700" fill="#16231f">22.7%</text>
+        <text x="20" y="112" font-size="12" fill="#5d6b66">Other = 100% minus the dollar and euro shares (yen, sterling, renminbi, Canadian dollar and others)</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 2.</b> Source: IMF, Currency Composition of Official Foreign Exchange Reserves (COFER), data brief of 30 September 2026.<sup><a href="#n7">7</a></sup></figcaption>
+  </figure>
+
+  <p>Meanwhile, the countries that depend on this system have become the larger part of the world economy. Emerging and developing economies now account for almost 60% of global GDP on a purchasing-power basis, up from 37% in the 1980s,<sup><a href="#n8">8</a></sup> yet their currencies are rarely used to settle cross-border deals or held in reserve. Defenders of the system point to its stability, its deep markets and the investment it attracts. The rest of this article asks what it costs.</p>
+
+  <!-- ===== 02 ===== -->
+  <div class="sec-head"><span class="sec-num">02</span><h2>When a cheaper currency doesn't buy more exports</h2></div>
+
+  <p>Introductory economics offers a comforting rule. If a country's currency falls, its goods become cheaper abroad, foreigners buy more of them, and exports pull the economy out of trouble.</p>
+
+  <p>In a dollar-priced world, that chain can break at the first link. Roughly 40% of world goods trade is invoiced in dollars,<sup><a href="#n9">9</a></sup> and for Asian and Latin American emerging economies the dollar is the dominant invoicing currency, with shares that have been remarkably stable for two decades.<sup><a href="#n10">10</a></sup> When an exporter prices in dollars, a falling local currency barely changes what the foreign buyer pays: the dollar price stays put, so the buyer has no new reason to order more.<sup><a href="#n10">10</a></sup> Imports, meanwhile, are also priced in dollars and become dearer in local terms. Adjustment ends up working mainly through imports, with households and firms buying less, rather than through exports.<sup><a href="#n10">10</a></sup></p>
+
+  <figure>
+    <p class="fig-title">Two ways a falling currency can play out</p>
+    <p class="fig-sub">A stylised comparison of the textbook case and the dollar-pricing case described by IMF researchers<sup><a href="#n10">10</a></sup></p>
+    <div class="world">
+      <div class="world-label a">Textbook world</div>
+      <div class="flow a">
+        <div class="step">Local currency falls</div><div class="arrow">→</div>
+        <div class="step">Exports get cheaper abroad</div><div class="arrow">→</div>
+        <div class="step">Foreign demand rises</div><div class="arrow">→</div>
+        <div class="step">Growth recovers</div>
+      </div>
+      <div class="world-label b">Dollar-priced world</div>
+      <div class="flow b">
+        <div class="step">Local currency falls</div><div class="arrow">→</div>
+        <div class="step">Dollar price of exports barely changes</div><div class="arrow">→</div>
+        <div class="step">Little extra demand; dollar-priced imports cost more</div><div class="arrow">→</div>
+        <div class="step">Inflation, weak recovery</div>
+      </div>
+    </div>
+    <figcaption><b>Figure 3.</b> Simplified illustration, not data. Mechanism as described in the IMF Staff Discussion Note <em>Dominant Currencies and External Adjustment</em>.<sup><a href="#n10">10</a></sup></figcaption>
+  </figure>
+
+  <p>Brazil offers a flavour of the problem. In 2016 the real was worth about 38% less against the dollar than its 2013 average.<sup><a href="#n11">11</a></sup> Yet by several measures that adjust for prices and for Brazil's trading partners' currencies, it had barely moved from its 2013 level, which shows that a headline fall against the dollar is not the same as a gain in competitiveness.<sup><a href="#n11">11</a></sup></p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">≈40%</div><div class="l">of world goods trade is invoiced in US dollars<sup><a href="#n9">9</a></sup></div></div>
+    <div class="stat"><div class="n">38%</div><div class="l">fall of the Brazilian real against the dollar, 2016 versus its 2013 average<sup><a href="#n11">11</a></sup></div></div>
+  </div>
+
+  <p>The consequences reach beyond trade. If a currency cannot reliably win back competitiveness, a factory in a poorer country becomes a less certain bet for a foreign investor. That may help explain what economists call Lucas's paradox: capital does not flow from rich countries to poor ones as readily as theory predicts. The link is plausible, not proven. Nor should the dollar take all the blame. The troubles above also reflect political instability, weak commodity prices and fragile public finances at home, and blaming the dollar is politically convenient.</p>
+
+  <!-- ===== 03 ===== -->
+  <div class="sec-head"><span class="sec-num">03</span><h2>Debts you cannot print</h2></div>
+
+  <p>The second mechanism is debt. Poorer governments often have to borrow in foreign currency, because lenders abroad prefer it. Most of what African governments owe to China, for example, is denominated in dollars, and the IMF sees no clear downward trend in that share.<sup><a href="#n12">12</a></sup></p>
+
+  <p>The trouble starts when the local currency falls. A debt of a billion dollars is still a billion dollars, but it takes more pesos, cedis or naira to repay it. A central bank can print its own currency to calm a domestic crisis; it cannot print dollars. If it tries to defend its currency by raising interest rates instead, it risks choking the very economy it is trying to protect. As money leaves, there is less left to spend on roads, hospitals and schools.</p>
+
+  <p>Argentina in 2018 shows the loop: the peso falls, the dollar debt grows heavier, confidence drops and the peso falls again.<sup><a href="#n1">1</a></sup></p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">Over half</div><div class="l">of its value lost by the peso against the dollar in 2018<sup><a href="#n1">1</a></sup></div></div>
+    <div class="stat"><div class="n">$57.1bn</div><div class="l">the IMF programme at its largest, a record for a stand-by arrangement<sup><a href="#n2">2</a></sup></div></div>
+    <div class="stat"><div class="n">4 of 12</div><div class="l">planned IMF reviews completed before the programme was cancelled in July 2020<sup><a href="#n2">2</a></sup></div></div>
+  </div>
+
+  <p>The IMF's own post-mortem is blunt. It concluded that the programme did not achieve its aim of restoring confidence in Argentina's finances while fostering growth.<sup><a href="#n2">2</a></sup> The dollar was not the only culprit, of course. A severe drought and an overvalued peso also played their part.<sup><a href="#n1">1</a></sup> But the episode is a warning about what happens when a country owes money in a currency it cannot print.</p>
+
+  <!-- ===== 04 ===== -->
+  <div class="sec-head"><span class="sec-num">04</span><h2>The least bad option</h2></div>
+
+  <p>If the dollar is so costly, why not leave? Because for any single country, leaving is costlier still.</p>
+
+  <p>Money is a little like a language. Its value lies in how many other people already use it. English is not the world's most elegant language, but it is the one that business partners are most likely to share. The dollar works the same way. It is backed by the world's largest economy and by the deepest financial markets, and US Treasury bonds are widely treated as the safest asset there is. That is why the dollar's share of currency trading has hardly moved in a quarter of a century.<sup><a href="#n4">4</a></sup> The more people use it, the harder it is to do without it.</p>
+
+  <p>For an exporter in a developing country, there is also a practical point. Importers want a price they can rely on, and many local currencies cannot offer that. Switching to local currency invoicing could cost an exporter customers, and a government that tries to force the change risks scaring off the foreign capital it needs.</p>
+
+  <!-- ===== 05 ===== -->
+  <div class="sec-head"><span class="sec-num">05</span><h2>Cracks, or just a wobble?</h2></div>
+
+  <p>2025 gave sceptics something to point to. The US dollar index fell 10.8% in the first half of the year, its worst first half since 1973, as investors reconsidered their appetite for US assets.<sup><a href="#n13">13</a></sup></p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">−10.8%</div><div class="l">US dollar index, first half of 2025, the worst first half since 1973<sup><a href="#n13">13</a></sup></div></div>
+    <div class="stat"><div class="n">0.8 pts</div><div class="l">the range of the dollar's share of reserves across five quarters<sup><a href="#n7">7</a></sup><sup><a href="#n15">15</a></sup></div></div>
+    <div class="stat"><div class="n">1.95%</div><div class="l">the renminbi's share of global reserves at the end of 2025<sup><a href="#n16">16</a></sup></div></div>
+  </div>
+
+  <p>Yet in the reserves data the shift is far more modest than the headlines suggest. IMF economists found that most of the apparent dip in the dollar's share in the second quarter of 2025 came from exchange-rate movements, with the euro and other currencies rising against the dollar, rather than from central banks selling dollars.<sup><a href="#n14">14</a></sup> Across the five quarters from the second quarter of 2025 to the second quarter of 2026, the share has stayed between 56.4% and 57.2%.</p>
+
+  <figure>
+    <p class="fig-title">A slow drift, not a stampede</p>
+    <p class="fig-sub">US dollar share of global official foreign-exchange reserves, last published figure for each quarter (%)</p>
+    <svg viewBox="0 0 640 262" role="img" aria-label="Line chart: dollar share of reserves 57.08, 56.92, 56.42, 57.18, 56.70 percent from Q2 2025 to Q2 2026">
+      <g font-family="system-ui,-apple-system,'Segoe UI',Arial,sans-serif">
+        <line x1="70" y1="30" x2="610" y2="30" stroke="#e1e6e2"/>
+        <line x1="70" y1="86.7" x2="610" y2="86.7" stroke="#e1e6e2"/>
+        <line x1="70" y1="143.3" x2="610" y2="143.3" stroke="#e1e6e2"/>
+        <line x1="70" y1="200" x2="610" y2="200" stroke="#16231f"/>
+        <text x="60" y="34" font-size="13" text-anchor="end" fill="#5d6b66">58%</text>
+        <text x="60" y="91" font-size="13" text-anchor="end" fill="#5d6b66">57%</text>
+        <text x="60" y="148" font-size="13" text-anchor="end" fill="#5d6b66">56%</text>
+        <text x="60" y="204" font-size="13" text-anchor="end" fill="#5d6b66">55%</text>
+        <polyline points="100,82.1 215,91.2 330,119.5 445,76.5 560,103.7" fill="none" stroke="#1d7a5f" stroke-width="3" stroke-linejoin="round"/>
+        <g fill="#1d7a5f" stroke="#fff" stroke-width="2">
+          <circle cx="100" cy="82.1" r="6"/><circle cx="215" cy="91.2" r="6"/><circle cx="330" cy="119.5" r="6"/><circle cx="445" cy="76.5" r="6"/><circle cx="560" cy="103.7" r="6"/>
+        </g>
+        <g font-size="14" font-weight="700" text-anchor="middle" fill="#16231f">
+          <text x="100" y="66">57.08</text><text x="215" y="75">56.92</text><text x="330" y="103">56.42</text><text x="445" y="60">57.18</text><text x="560" y="88">56.70</text>
+        </g>
+        <g font-size="13" text-anchor="middle" fill="#16231f">
+          <text x="100" y="224">Q2 2025</text><text x="215" y="224">Q3 2025</text><text x="330" y="224">Q4 2025</text><text x="445" y="224">Q1 2026</text><text x="560" y="224">Q2 2026</text>
+        </g>
+        <text x="70" y="250" font-size="12" fill="#5d6b66">Note: the vertical axis starts at 55%, not zero, which magnifies small changes.</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 4.</b> Source: IMF COFER data briefs of December 2025, July 2026 and September 2026.<sup><a href="#n7">7</a></sup><sup><a href="#n15">15</a></sup> The IMF changed its COFER methodology in 2025 and figures are revised between releases, so the latest published value for each quarter is shown.</figcaption>
+  </figure>
+
+  <p>The main challenger is China. The renminbi now takes part in 8.5% of currency trades,<sup><a href="#n6">6</a></sup> but it makes up under 2% of reserves.<sup><a href="#n16">16</a></sup> Beijing's central bank had signed 40 bilateral swap agreements with central banks around the world by 2021,<sup><a href="#n12">12</a></sup> and at the 2024 China–Africa forum, China for the first time denominated its financing commitments in renminbi.<sup><a href="#n17">17</a></sup> Proposals for a joint BRICS currency and for central-bank digital currencies keep the idea of an alternative alive. Both face a basic obstacle: a currency is only as useful as the markets and trust behind it, and those take decades to build.</p>
+
+  <div class="closing">
+    <p><strong>So is the dollar a brake on developing countries?</strong> In two specific ways, the evidence says yes: it dulls the benefit of a weaker currency, and it turns every currency slide into a debt problem. But it is also the least bad option available today, and its hold is strengthened by the very habit of using it.</p>
+    <p>If the dollar's dominance fades, it will probably fade slowly. The greater risk may be a disorderly transition, because the countries with the thinnest financial buffers would feel the shock first.</p>
+  </div>
+
+</main>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li id="n1">Congressional Research Service, <em>Argentina's Economic Crisis</em> (2 October 2018). <a href="https://www.everycrsreport.com/files/2018-10-02_IF10991_f256675d851860d93ca1d6a57fd1823bb4d91a75.pdf">everycrsreport.com/files/2018-10-02_IF10991…pdf</a></li>
+    <li id="n2">IMF, <em>Argentina: Ex-Post Evaluation of Exceptional Access Under the 2018 Stand-By Arrangement</em> (22 December 2021). <a href="https://www.imf.org/en/publications/cr/issues/2021/12/22/argentina-ex-post-evaluation-of-exceptional-access-under-the-2018-stand-by-arrangement-511289">imf.org/en/publications/cr/issues/2021/12/22/…</a></li>
+    <li id="n3">Bank for International Settlements, "Global FX trading hits $9.6 trillion per day in April 2025", press release, 30 September 2025. <a href="https://www.bis.org/press/p250930.htm">bis.org/press/p250930.htm</a></li>
+    <li id="n4">Timothy Taylor, "$9.5 trillion per day: foreign exchange markets", <em>Conversable Economist</em>, 9 December 2025, summarising the BIS 2025 Triennial Survey. <a href="https://conversableeconomist.com/2025/12/09/9-5-trillion-per-day-foreign-exchange-markets/">conversableeconomist.com/2025/12/09/…</a></li>
+    <li id="n5">Finance Magnates, "Global FX Trading Jumps 28% to $9.6 Trillion Daily as Derivatives Soar, BIS Survey Finds", 30 September 2025. <a href="https://www.financemagnates.com/institutional-forex/global-fx-trading-jumps-28-to-96-trillion-as-derivatives-soar-bis-survey-finds">financemagnates.com/institutional-forex/…</a></li>
+    <li id="n6">World Economic Forum, "Dollar still dominates forex trading", October 2025. <a href="https://www.weforum.org/stories/2025/10/dollar-still-dominates-forex-trading-2025-finance-news">weforum.org/stories/2025/10/dollar-still-dominates-forex-trading-2025-finance-news</a></li>
+    <li id="n7">IMF Data, <em>IMF Data Brief: Currency Composition of Official Foreign Exchange Reserves</em>, 30 September 2026 (2026 Q2: dollar 56.70%, euro 20.60%; 2026 Q1: 57.18%). <a href="https://data.imf.org/en/news/imf%20data%20brief%20september%2030">data.imf.org/en/news/imf data brief september 30</a></li>
+    <li id="n8">RANE Worldview, "Despite slowed Chinese growth, global economic power continues to shift toward Asia", 26 December 2023 (almost 60% of global GDP). <a href="https://worldview.ranenetwork.com/content/analysis/2023-12-26/despite-slowed-chinese-growth-global-economic-power-continues-to-shift-toward-asia">worldview.ranenetwork.com/content/analysis/2023-12-26/…</a>. For the 1980s share (37%, purchasing-power basis): "The emergence of Emerging Market Economies", <a href="https://competitiveness.in/the-rise-of-emes">competitiveness.in/the-rise-of-emes</a></li>
+    <li id="n9">Tille, Mehl, Georgiadis and Le Mezo, <em>Fundamentals vs. policies: can the US dollar's dominance in global trade be dented?</em>, CEPR Discussion Paper DP16303. <a href="https://repec.cepr.org/repec/cpr/ceprdp/DP16303.pdf">repec.cepr.org/repec/cpr/ceprdp/DP16303.pdf</a></li>
+    <li id="n10">Adler, Casas, Cubeddu, Gopinath and others, <em>Dominant Currencies and External Adjustment</em>, IMF Staff Discussion Note 20/05, July 2020. <a href="https://imf.org/-/media/Files/Publications/SDN/2020/English/SDNEA2020005.ashx">imf.org/-/media/Files/Publications/SDN/2020/English/SDNEA2020005.ashx</a></li>
+    <li id="n11">Otaviano Canuto, "Where has all the BRL depreciation gone?", <em>Financial Times</em>, December 2016, as reproduced by the Center for Macroeconomics and Development. <a href="https://www.cmacrodev.com/?p=1601">cmacrodev.com/?p=1601</a></li>
+    <li id="n12">Chen, Fornino and Rawlings, <em>Navigating the Evolving Landscape between China and Africa's Economic Engagements</em>, IMF Working Paper 24/37, February 2024. <a href="https://www.imf.org/en/publications/wp/issues/2024/02/23/navigating-the-evolving-landscape-between-china-and-africas-economic-engagements-545104">imf.org/en/publications/wp/issues/2024/02/23/…</a></li>
+    <li id="n13">Business Insider, "The dollar posted its worst first-half performance since Nixon was president", 1 July 2025. <a href="https://www.businessinsider.nl/the-dollar-posted-its-worst-first-half-performance-since-nixon-was-president/">businessinsider.nl/the-dollar-posted-its-worst-first-half-performance-since-nixon-was-president/</a></li>
+    <li id="n14">IMF Blog, "Dollar's share of reserves held steady in second quarter when adjusted for FX moves", 1 October 2025. <a href="https://www.imf.org/en/blogs/articles/2025/10/01/dollars-share-of-reserves-held-steady-in-second-quarter-when-adjusted-for-fx-moves">imf.org/en/blogs/articles/2025/10/01/…</a></li>
+    <li id="n15">IMF Data briefs on COFER, 19 December 2025 (2025 Q2: 57.08%; 2025 Q3: 56.92%) and 1 July 2026 (2025 Q4: 56.42%). <a href="https://data.imf.org/en/news/imf-data-brief-december-19">data.imf.org/en/news/imf-data-brief-december-19</a>; <a href="https://data.imf.org/en/news/imf%20data%20brief%20july%20">data.imf.org/en/news/imf data brief july</a></li>
+    <li id="n16">IMF Data, <em>IMF Data Brief: Currency Composition of Official Foreign Exchange Reserves</em>, 27 March 2026 (renminbi 1.95% in 2025 Q4). <a href="https://data.imf.org/en/news/imf+data+brief+march+27">data.imf.org/en/news/imf data brief march 27</a></li>
+    <li id="n17">Center for Global Development, "Channeling the FOCAC 2024 financing pledge in a time of global turmoil". <a href="https://www.cgdev.org/publication/channeling-focac-2024-financing-pledge-time-global-turmoil?hl=en-US">cgdev.org/publication/channeling-focac-2024-financing-pledge-time-global-turmoil</a></li>
+  </ol>
+  <p class="note">Notes: Percentages are as reported by the sources named. Reserve shares are revised between IMF releases, and the 38% figure for the Brazilian real compares the 2016 average with the 2013 average, as reported by the source. The renminbi's 8.5% share in currency trading is as reported by the World Economic Forum from the BIS survey.</p>
+</section>
+
+</body>
+</html>
